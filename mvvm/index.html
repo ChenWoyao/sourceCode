@@ -1,0 +1,37 @@
+<body>
+    <div id="app">
+        <h1>{{name}}</h1>
+        <h2>{{fullname}}</h2>
+        <input type="text" v-model="name">
+        <p>
+            爱好:
+            <span>书籍：{{loves.book}}</span>
+            <span>电影：{{loves.movies}}</span>
+        </p>
+        <p>
+            音乐专辑: {{music}} 动画专辑: {{animation}}
+        </p>
+    </div>
+    <script src="./mvvm.js"></script>
+    <script>
+        let mvvm = new Mvvm({
+            el: '#app',
+            data: {
+                name: 'woyao',
+                music: ['m1', 'm2'],
+                animation: ['an1', 'an2'],
+                loves: {
+                    book: 'b1',
+                    movies: 'mv1'
+                }
+            },
+            computed: {
+                fullname: () => { return 'chenwoyao'}
+            },
+            mounted() {
+                console.log('mounted')
+            }
+        })
+        const app = document.querySelector('#app')
+    </script>
+</body>

@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-25 10:18:08
+ * @LastEditTime: 2020-12-29 17:05:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /woyao_cli/public/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script>
+        (function(doc, win) {
+            setBaseFont()
+            win.addEventListener('resize', setBaseFont)
+            function setBaseFont() {
+                var docEle = doc.documentElement
+                var limitWidth = 420
+                var clientWidth = docEle.clientWidth
+                docEle.style.fontSize = (Math.min(limitWidth, clientWidth) / 375) * 75 + 'px'
+            }
+        })(document, window)
+    </script>
+    <%= htmlWebpackPlugin.options.script.ERUDA %>
+</html>
